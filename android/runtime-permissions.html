@@ -33,7 +33,7 @@
 <p>Don’t assume that if you possess a permission from particular group, you also have all the other permissions from that group – always ask for specific ones, because current behavior might change in the future.</p>
 </blockquote>
 <p>What all of that means for your users, is they can just install any given app from the Play Store and start using it right away (no questions during installation asked). Permissions falling into <em>normal protection level</em> are granted by default, and those should be enough for typical app to function, at least at the beginning. The process of asking for permissions is pushed back to the last possible moment – the moment that user wants to perform an action requiring <em>dangerous</em> permission, for example – action of taking a photo would be briefly interrupted by a system dialog with permission request. Finally, user can grant or revoke<sup class="footnote-ref"><a href="#fn2" id="fnref2">2</a></sup> any permission at any time from system settings, without uninstalling app.</p>
-<p><img src="https://dl.dropboxusercontent.com/u/20220/adamjodlowski.github.io/screenshots/Screenshot%202015-12-10%2021.23.55.png" alt="App permissions can be fine-tuned separately app by app"></p>
+<img src="https://dl.dropboxusercontent.com/u/20220/adamjodlowski.github.io/screenshots/Screenshot%202015-12-10%2021.23.55.png" alt="App permissions can be fine-tuned separately app by app" width="400">
 <blockquote>
 <p>When user <em>revokes permissions</em>, our application’s process gets killed.</p>
 </blockquote>
@@ -68,7 +68,7 @@ targetSdkVersion <span class="token number">23</span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>manifest</span><span class="token punctuation">&gt;</span></span>
 </code></pre>
 <h3 id="make-sure-to-check-if-permissions-have-been-granted-and-ask-for-them-if-necessary">3. Make sure to check if permissions have been granted and ask for them if necessary</h3>
-<p><img src="https://dl.dropboxusercontent.com/u/20220/adamjodlowski.github.io/screenshots/Screenshot%202015-12-10%2017.53.06.png" alt="System window pops up to get user's approval"></p>
+<img src="https://dl.dropboxusercontent.com/u/20220/adamjodlowski.github.io/screenshots/Screenshot%202015-12-10%2017.53.06.png" alt="System window pops up to get user's approval" width="400">
 <pre class=" language-java"><code class="prism  language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">MainActivity</span> <span class="token keyword">extends</span> <span class="token class-name">AppCompatActivity</span> <span class="token punctuation">{</span>
 
     @Override
@@ -114,7 +114,7 @@ targetSdkVersion <span class="token number">23</span>
 <blockquote>
 <p>Please note, this method returns <code>false</code> if user already checked <em>Never ask again</em> checkbox.</p>
 </blockquote>
-<p><img src="https://dl.dropboxusercontent.com/u/20220/adamjodlowski.github.io/screenshots/Screenshot%202015-12-10%2017.55.29.png" alt="Asking second time, user can permanently dismiss this dialog for our app"></p>
+<img src="https://dl.dropboxusercontent.com/u/20220/adamjodlowski.github.io/screenshots/Screenshot%202015-12-10%2017.55.29.png" alt="Asking second time, user can permanently dismiss this dialog for our app" width="400">
 <p>There’s another feature introduced in SDK 23. You can ask for permissions only if the platform supports runtime permissions, so you can optionally provide new features, but don’t request new permissions from users on older platforms upon auto-update of existing installed app. All we need is declaration in Android Manifest:</p>
 <pre class=" language-xml"><code class="prism  language-xml"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>uses-permission-sdk-23</span> <span class="token attr-name"><span class="token namespace">android:</span>name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>android.permission.ACCESS_FINE_LOCATION<span class="token punctuation">"</span></span><span class="token punctuation">/&gt;</span></span>
 </code></pre>
