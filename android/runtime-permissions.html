@@ -124,7 +124,7 @@ targetSdkVersion <span class="token number">23</span>
 <li>apps compiled with Target SDK &lt; 23 are treated as usual</li>
 <li>many basic permissions are granted by default</li>
 <li>you still need to declare them in the Manifest</li>
-<li>you must check every time you need them (<code>Activity#onCreate</code> is sufficient)</li>
+<li>you must check every time you need them (<code>Activity#onCreate()</code> is sufficient)</li>
 </ul>
 <blockquote>
 <p>Protip: Android Studio parses annotations and warns you if you try to make an API call but don’t request needed permissions.</p>
